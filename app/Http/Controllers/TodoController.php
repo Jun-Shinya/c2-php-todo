@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $todo_list = Todo::all();
@@ -42,7 +47,7 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('todo/show', ['todo' => Todo::findOrFail($id)]);
     }
 
     /**

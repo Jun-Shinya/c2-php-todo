@@ -25,7 +25,11 @@
             <tbody>
             @foreach($todo_list as $todo)
                 <tr>
-                    <td  style="width: 300px">{{ $todo->title  }}</td>
+                    <td >
+                        <a href="/todo/{{ $todo->id }}">
+                            {{ $todo->title  }}
+                        </a>
+                    </td>
                     <td>{{ $todo->due_date }}</td>
                 </tr>
             @endforeach
