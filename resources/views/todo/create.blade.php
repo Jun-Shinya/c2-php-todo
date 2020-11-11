@@ -12,34 +12,13 @@
 
 <div class="container">
     <div class="col-md-12">
-        <h1 class="text-center text-primary py-3">TODO App</h1>
-
-        <h2 class="text-muted py-3">やること一覧
-            <div class="text-right">
-                <a href="todo/create" input class="btn btn-primary">+新規作成</a>
-            </div>
-        </h2>
-        <table class="table">
-            <thead>
-            <tr>
-                <th>タイトル</th>
-                <th>期限</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($todo_list as $todo)
-                <tr>
-                    <td>
-                        <a href="/todo/{{ $todo->id }}">
-                            {{ $todo->title }}
-                        </a>
-                    </td>
-                    <td>{{ $todo->due_date }}</td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-        {{ $todo_list->links() }}
+        <h2 class="text-muted py-3">ToDo 作成</h2>
+        <div>タスク名</div>
+        <input class="form-control" type="text" placeholder="ゴミ出し"><br>
+        <div>期限</div>
+        <input type="text" class="form-control" name="due_date" id="due_date" placeholder="年/月/日" required><br>
+        <p><input class="btn btn-primary" type="button" value="作成"></p>
+        <input class="btn btn-primary" type="button" value="戻る" onclick="history.back()">
     </div>
 </div>
 
