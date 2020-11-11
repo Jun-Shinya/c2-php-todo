@@ -18,6 +18,7 @@
         <label for="due_date">期限</label>
         <input type="text" class="form-control" name="due_date" placeholder="年/月/日" required><br>
         <p><input class="btn btn-primary" type="button" value="作成"></p>
+        <hr width="1080">
         <input class="btn btn-primary" type="button" value="戻る" onclick="history.back()">
     </div>
 </div>
