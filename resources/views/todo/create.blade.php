@@ -13,10 +13,10 @@
 <div class="container">
     <div class="col-md-12">
         <h2 class="text-muted py-3">ToDo 作成</h2>
-        <div>タスク名</div>
-        <input class="form-control" type="text" placeholder="ゴミ出し"><br>
-        <div>期限</div>
-        <input type="text" class="form-control" name="due_date" id="due_date" placeholder="年/月/日" required><br>
+        <label for="title">タスク名</label>
+        <input class="form-control" type="text" name="title" placeholder="ゴミ出し"><br>
+        <label for="due_date">期限</label>
+        <input type="text" class="form-control" name="due_date" placeholder="年/月/日" required><br>
         <p><input class="btn btn-primary" type="button" value="作成"></p>
         <input class="btn btn-primary" type="button" value="戻る" onclick="history.back()">
     </div>
