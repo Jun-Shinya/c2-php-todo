@@ -1,10 +1,10 @@
 <div class="form-group">
     <label for="title">タスク名</label>
-    <input type="text" class="form-control" name="title" placeholder="ゴミ出し" required>
+    <input type="text" class="form-control" name="title" placeholder="ゴミ出し" required value="{{ $todo->title }}">
 </div>
 <div class="form-group">
     <label for="due_date">期限</label>
-    <input type="date" class="form-control" name="due_date" placeholder="2020/10/31" required>
+    <input type="date" class="form-control" name="due_date" placeholder="2020/10/31" required value="{{ $todo->due_date }}">
 </div>
 <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
 @if ($errors->any())
