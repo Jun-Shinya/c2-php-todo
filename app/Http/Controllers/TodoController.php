@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateTodoRequest;
 use App\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,15 +39,15 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateTodoRequest $request)
     {
         $todo = new todo();
         $todo->title = $request->title;
         $todo->due_date = $request->due_date;
         $todo->status = Todo::STATUS_NOT_YET;
 
-        Auth()::user()->todos()->save($todo);
-        return view('welcom');
+        Auth::user()->todos()->save($todo);
+        return redirect()->to('/todo');
     }
 
     /**
