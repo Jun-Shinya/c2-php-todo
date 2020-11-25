@@ -101,6 +101,13 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //タスクの取得
+        $todo = Auth::user()->todos()->findOrFail($id);
+
+        //タスクの削除
+        $todo->delete();
+
+        //タスク一覧ページにリダイレクト
+        return redirect()->to('/todo/');
     }
 }

@@ -27,8 +27,10 @@
                         <td>{{ $todo->due_date }}</td>
                         <td><a href="/todo/{{ $todo->id }}/edit" class="btn btn-success">編集</a></td>
                         <td>
-                            <form action="/todo/{{ $todo->id}}" method="destroy()">
-                                <button class="btn btn-danger my-2" type="submit">削除</button>
+                            <form action="/todo/{{ $todo->id }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">削除</button>
                             </form>
                         </td>
                     </tr>
