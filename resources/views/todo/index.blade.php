@@ -13,6 +13,7 @@
                     <th>タイトル</th>
                     <th>期限</th>
                     <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -25,6 +26,11 @@
                         </td>
                         <td>{{ $todo->due_date }}</td>
                         <td><a href="/todo/{{ $todo->id }}/edit" class="btn btn-success">編集</a></td>
+                        <td>
+                            <form action="/todo/{{ $todo->id}}" method="destroy()">
+                                <button class="btn btn-danger my-2" type="submit">削除</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
