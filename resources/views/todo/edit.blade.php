@@ -8,6 +8,9 @@
                 @method('PUT')
                 @include('parts.todo.input', ['todo' => $todo])
                 <button class="btn btn-primary my-2" type="submit">更新</button>
+                <select>
+                   
+                </select>
             </form>
             <hr>
             @include('parts.button.back')

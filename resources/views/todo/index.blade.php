@@ -12,6 +12,7 @@
                 <tr>
                     <th>タイトル</th>
                     <th>期限</th>
+                    <th>ステータス</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -25,6 +26,7 @@
                             </a>
                         </td>
                         <td>{{ $todo->due_date }}</td>
+                        <td>{{$todo->getStatusText()}}</td>
                         <td><a href="/todo/{{ $todo->id }}/edit" class="btn btn-success">編集</a></td>
                         <td>
                             <form action="/todo/{{ $todo->id }}" method="POST">
