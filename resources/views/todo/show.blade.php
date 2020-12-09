@@ -7,12 +7,14 @@
             <thead>
             <tr>
                 <th>タイトル</th>
+                <th>ステータス</th>
                 <th>期限</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td  style="width: 300px">{{ $todo->title }}</td>
+                <td>{{$todo->getStatusText()}}</td>
                 <td>{{ $todo->due_date }}</td>
             </tr>
             </tbody>
