@@ -11,7 +11,7 @@
     <label for="status">ステータス</label>
     <select name="status" id="select" class="form-control">
         @foreach(\App\Todo::STATUS as $key => $val)
-            <option ]
+            <option
                 value="{{ $key }}"
                 {{ $todo && $key == old('status', $todo->status) ? 'selected' : '' }}
             >
