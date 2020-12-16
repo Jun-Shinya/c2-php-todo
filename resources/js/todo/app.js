@@ -33,3 +33,8 @@ $(function() {
         });
     })
   });
+
+  /**
+   * git user name init
+   * git user email init
+   */
