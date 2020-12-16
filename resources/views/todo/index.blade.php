@@ -11,8 +11,8 @@
                 <thead>
                 <tr>
                     <th>タイトル</th>
-                    <th>期限</th>
                     <th>ステータス</th>
+                    <th>期限</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -25,15 +25,13 @@
                                 {{ $todo->title }}
                             </a>
                         </td>
-                        <td>{{ $todo->getDisplayDate() }}</td>
                         <td>{{$todo->getStatusText()}}</td>
+                        <td>{{ $todo->getDisplayDate() }}</td>
                         <td><a href="/todo/{{ $todo->id }}/edit" class="btn btn-success">編集</a></td>
                         <td>
-                            <form action="/todo/{{ $todo->id }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger" type="submit">削除</button>
-                            </form>
+                        <button class="btn btn-danger delete-btn" type="button" data-toggle="modal" data-target="#delete-modal" data-todo_title="{{ $todo->title }}" data-todo_id="{{ $todo->id }}">
+                            <i class="fas fa-trash-alt mr-2"></i>削除
+                        </button>
                         </td>
                     </tr>
                 @endforeach
@@ -42,4 +40,9 @@
             {{ $todo_list->links() }}
         </div>
     </div>
+    @include('parts.modal.delete')
+@endsection
+
+@section('script')
+    <script src="{{ asset('/js/todo/app.js') }}"></script>
 @endsection

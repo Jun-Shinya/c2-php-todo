@@ -98,7 +98,7 @@ class TodoController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
@@ -109,6 +109,6 @@ class TodoController extends Controller
         $todo->delete();
 
         //タスク一覧ページにリダイレクト
-        return redirect()->to('/todo/');
+        return response()->json(['result' => true]);
     }
 }
